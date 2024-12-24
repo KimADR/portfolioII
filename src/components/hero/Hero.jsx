@@ -117,7 +117,7 @@ const Hero = () => {
           <motion.a variants={followVariants} href="/">
             <img src="/instagram.png" alt="" />
           </motion.a>
-          <motion.a variants={followVariants} href="/">
+          <motion.a variants={followVariants} href="/https://web.facebook.com/profile.php?id=61554225998206">
             <img src="/facebook.png" alt="" />
           </motion.a>
           <motion.a variants={followVariants} href="/">

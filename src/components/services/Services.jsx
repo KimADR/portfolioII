@@ -104,11 +104,11 @@ const Services = () => {
       <div className="sSection right">
         <Suspense fallback={<div>Loading...</div>}>
           {currentServiceId === 1 ? (
-            <ComputerModelContainer />
+            <ConsoleModelContainer />
           ) : currentServiceId === 2 ? (
             <MugModelContainer />
           ) : (
-            <ConsoleModelContainer />
+            <ComputerModelContainer />
           )}
         </Suspense>
       </div>
