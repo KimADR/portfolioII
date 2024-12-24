@@ -1,8 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import "./hero.css";
+import Shape from "./Shape";
 import Speech from "./Speech";
 import { motion } from "motion/react";
-import Shape from "./Shape";
 import { Suspense } from "react";
 
 const awardVariants = {
@@ -48,7 +48,7 @@ const Hero = () => {
         >
           Hey There,
           <br />
-          <span>I&apos;m Mael Andria!</span>
+          <span>I&apos;m Mael!</span>
         </motion.h1>
         {/* AWARDS */}
         <motion.div
@@ -59,7 +59,8 @@ const Hero = () => {
         >
           <motion.h2 variants={awardVariants}>Top Rated Designer</motion.h2>
           <motion.p variants={awardVariants}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          Exceptional attention to detail and a
+          deep understanding of design principles and modern aesthetics.
           </motion.p>
           <motion.div variants={awardVariants} className="awardList">
             <motion.img variants={awardVariants} src="/award1.png" alt="" />
@@ -162,7 +163,7 @@ const Hero = () => {
               ease: "linear",
             }}
           >
-            <svg viewBox="0 0 200 200" width="150" height="150">
+            <svg viewBox="0 0 200 200" width="120" height="120">
               <circle cx="100" cy="100" r="90" fill="pink" />
               <path
                 id="innerCirclePath"

@@ -14,7 +14,7 @@ const Speech = () => {
             1000,
             "Same substring at the start will only be typed out once, initially",
             1000,
-            "Lorem ipsum dolor sit amet lerinat consectetur adipisicing. ",
+            "Hard working and trying to do your best are the success' keys. ",
             1000,
           ]}
           wrapper="span"
@@ -24,7 +24,7 @@ const Speech = () => {
           repeat={Infinity}
         />
       </div>
-      <img src="/man.png" alt="" />
+      <img src="/kim.jpg" alt="" />
     </motion.div>
   );
 };
