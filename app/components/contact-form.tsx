@@ -6,7 +6,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { submitContactForm, type ContactFormState } from "../actions/contact"
 import { CheckCircle, AlertCircle, Loader2, User, Mail, MessageSquare } from "lucide-react"
 import Image from "next/image"
-import toast from "react-hot-toast"
+import { toast } from "sonner"
 import React from "react"
 import { useTranslation } from 'react-i18next'
 
@@ -42,6 +42,9 @@ export default function ContactForm() {
             }
           }
         )
+        setNameValue("")
+        setEmailValue("")
+        setMessageValue("")
       } else {
         toast.error(
           state.message,
@@ -66,16 +69,18 @@ export default function ContactForm() {
           <Image src="/images.jpeg" alt={t('userAvatar')} width={60} height={60} className="object-cover" />
         </div>
         <CardHeader className="items-center text-center bg-transparent p-2 pb-0">
-          <CardTitle className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">{t('quickContact')}</CardTitle>
+          <CardTitle className="text-xl sm:text-2xl font-bold text-center text-green-300">{t('quickContact')}</CardTitle>
         </CardHeader>
       </div>
       <CardContent className="pt-1 pb-4 px-4 z-10 relative">
         <form action={formAction} className="space-y-4">
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">{t('nameLabel')}</label>
+            <label htmlFor="name" className="text-sm font-medium text-blue-400">
+              {t('name')}
+            </label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400" />
+              <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-400" />
               <input
                 type="text"
                 id="name"
@@ -97,9 +102,11 @@ export default function ContactForm() {
 
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">{t('emailLabel')}</label>
+            <label htmlFor="email" className="text-sm font-medium text-blue-400">
+              {t('email')}
+            </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400" />
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-400" />
               <input
                 type="email"
                 id="email"
@@ -121,9 +128,11 @@ export default function ContactForm() {
 
           {/* Message Field */}
           <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-blue-600 dark:text-blue-400 mb-1">{t('messageLabel')}</label>
+            <label htmlFor="message" className="text-sm font-medium text-blue-400">
+              {t('message')}
+            </label>
             <div className="relative">
-              <MessageSquare className="absolute left-3 top-3 text-blue-400" />
+              <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-blue-400" />
               <textarea
                 id="message"
                 name="message"

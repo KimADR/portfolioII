@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { Toaster } from "react-hot-toast"
+import { Toaster } from "sonner"
 import I18nProvider from '@/components/I18nProvider'
 
 const inter = Inter({ subsets: ["latin"] })
@@ -26,17 +26,8 @@ export default function RootLayout({
         <I18nProvider>
           <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
             {children}
+            <Toaster richColors />
           </ThemeProvider>
-          <Toaster position="top-center" toastOptions={{
-            style: {
-              borderRadius: '10px',
-              background: 'linear-gradient(90deg, #a1c4fd 0%, #c2e9fb 100%)',
-              color: '#222',
-              boxShadow: '0 4px 24px 0 rgba(0,0,0,0.15)'
-            },
-            success: { iconTheme: { primary: '#22c55e', secondary: '#f0fdfa' } },
-            error: { iconTheme: { primary: '#ef4444', secondary: '#fee2e2' } }
-          }} />
         </I18nProvider>
       </body>
     </html>

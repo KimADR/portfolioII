@@ -2,8 +2,8 @@
 import Link from "next/link"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Github, Mail, MapPin, ExternalLink, Star, Users, UserPlus, Activity, Menu, X } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
+import { Github, Mail, MapPin, ExternalLink, Star, Users, UserPlus, Activity, Menu, X, Linkedin } from "lucide-react"
 import ContactForm from "./components/contact-form"
 import { ThemeToggle } from "@/components/theme-toggle"
 import React from "react"
@@ -327,120 +327,89 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-6xl relative z-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white drop-shadow-neon">{t('featuredProjects')}</h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Featured Project from GitHub */}
-            <Card className="border-2 border-blue-400/60 dark:border-blue-800 bg-white/10 backdrop-blur-md hover:shadow-neon-glass hover:border-blue-500 transition-shadow transition-colors flex flex-col h-full">
-              <CardHeader className="flex-1">
-                <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="flex items-start text-blue-300">
-                    <Github className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
-                    <span className="break-words w-[calc(100%-2rem)]">{t('frontendSchoolManagement')}</span>
-                  </CardTitle>
-                  <Badge className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-neon flex-shrink-0">{t('featured')}</Badge>
-                </div>
-                <CardDescription className="text-white/70 pt-2 break-words">
+            <Card className="bg-white/5 dark:bg-black/20 backdrop-blur-lg border-2 border-transparent hover:border-blue-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-neon-glass transition-all duration-300 group flex flex-col h-full">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image src="/school.jpg" alt={t('frontendSchoolManagement')} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+                <Badge className="absolute top-3 right-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-neon flex-shrink-0">{t('featured')}</Badge>
+              </div>
+              <CardHeader>
+                <CardTitle className="text-blue-300">{t('frontendSchoolManagement')}</CardTitle>
+                <CardDescription className="text-white/70 pt-2 break-words min-h-[4.5rem]">
                   {t('schoolManagementDesc')}
                 </CardDescription>
               </CardHeader>
-              <CardContent className="flex flex-col justify-end">
-                <div>
-                  <div className="flex items-center space-x-4 text-sm text-white/60 mb-2">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-1.5 shadow-neon"></div>
-                      {t('typeScript')}
-                    </div>
-                    <div className="flex items-center">
-                      <Star className="w-4 h-4 mr-1 text-yellow-400" />1
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/70 break-words">
-                    {t('modernSchoolDesc')}
-                  </p>
-                </div>
-                <div className="flex space-x-2 mt-4">
-                  <Button size="sm" asChild className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-neon">
-                    <Link
-                      href="https://github.com/KimADR/Frontend_School_management"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      {t('viewCode')}
-                    </Link>
-                  </Button>
+              <CardContent className="flex-grow">
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-neon text-xs">{t('typeScript')}</Badge>
+                  <Badge variant="secondary" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-neon text-xs">Next.js</Badge>
                 </div>
               </CardContent>
+              <CardFooter className="flex justify-between items-center pt-4 mt-auto">
+                <div className="flex items-center space-x-2 text-sm text-white/60">
+                  <Star className="w-4 h-4 mr-1 text-yellow-400" />1
+                </div>
+                <Button size="sm" asChild className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-neon">
+                  <Link
+                    href="https://github.com/KimADR/Frontend_School_management"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    {t('viewCode')}
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
 
             {/* Additional Project Examples */}
-            <Card className="hover:shadow-neon-glass hover:border-yellow-400 border-2 border-yellow-400/40 bg-white/10 backdrop-blur-md transition-shadow transition-colors flex flex-col h-full">
+            <Card className="bg-white/5 dark:bg-black/20 backdrop-blur-lg border-2 border-transparent hover:border-yellow-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-neon-glass transition-all duration-300 group flex flex-col h-full">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image src="/ecommerce.jpg" alt={t('ecommercePlatform')} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+              </div>
               <CardHeader>
-                <CardTitle className="flex items-start text-yellow-300">
-                  <Github className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="break-words">{t('ecommercePlatform')}</span>
-                </CardTitle>
-                <CardDescription className="text-white/70 pt-2 break-words">{t('ecommerceDesc')}</CardDescription>
+                <CardTitle className="text-yellow-300">{t('ecommercePlatform')}</CardTitle>
+                <CardDescription className="text-white/70 pt-2 break-words min-h-[4.5rem]">{t('ecommerceDesc')}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center space-x-4 text-sm text-white/60 mb-2">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 bg-yellow-500 rounded-full mr-1.5 shadow-neon"></div>
-                      {t('javaScript')}
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full mr-1.5 shadow-neon"></div>
-                      {t('react')}
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/70 break-words">
-                    {t('completeOnlineShopping')}
-                  </p>
-                </div>
-                <div className="flex space-x-2 mt-4">
-                  <Button size="sm" variant="outline" asChild className="border-yellow-400 text-black dark:text-yellow-200 hover:bg-yellow-400/10">
-                    <Link href="https://github.com/KimADR" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      {t('viewCode')}
-                    </Link>
-                  </Button>
+              <CardContent className="flex-grow">
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-neon text-xs">{t('javaScript')}</Badge>
+                  <Badge variant="secondary" className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white shadow-neon text-xs">{t('react')}</Badge>
                 </div>
               </CardContent>
+              <CardFooter className="flex justify-end items-center pt-4 mt-auto">
+                <Button size="sm" variant="outline" asChild className="border-yellow-400 text-black dark:text-yellow-200 hover:bg-yellow-400/10">
+                  <Link href="https://github.com/KimADR/Ecommerce" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    {t('viewCode')}
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
 
-            <Card className="hover:shadow-neon-glass hover:border-green-400 border-2 border-green-400/40 bg-white/10 backdrop-blur-md transition-shadow transition-colors flex flex-col h-full">
+            <Card className="bg-white/5 dark:bg-black/20 backdrop-blur-lg border-2 border-transparent hover:border-green-500 rounded-2xl overflow-hidden shadow-lg hover:shadow-neon-glass transition-all duration-300 group flex flex-col h-full">
+              <div className="relative h-48 w-full overflow-hidden">
+                <Image src="/desktop.png" alt={t('taskManagementApp')} fill className="object-cover transition-transform duration-300 group-hover:scale-105" />
+              </div>
               <CardHeader>
-                <CardTitle className="flex items-start text-green-300">
-                  <Github className="w-5 h-5 mr-2 flex-shrink-0 mt-0.5" />
-                  <span className="break-words">{t('taskManagementApp')}</span>
-                </CardTitle>
-                <CardDescription className="text-white/70 pt-2 break-words">{t('taskManagementDesc')}</CardDescription>
+                <CardTitle className="text-green-300">{t('taskManagementApp')}</CardTitle>
+                <CardDescription className="text-white/70 pt-2 break-words min-h-[4.5rem]">{t('taskManagementDesc')}</CardDescription>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center space-x-4 text-sm text-white/60 mb-2">
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 bg-green-500 rounded-full mr-1.5 shadow-neon"></div>
-                      {t('python')}
-                    </div>
-                    <div className="flex items-center">
-                      <div className="w-3 h-3 bg-purple-500 rounded-full mr-1.5 shadow-neon"></div>
-                      {t('electron')}
-                    </div>
-                  </div>
-                  <p className="text-sm text-white/70 break-words">
-                    {t('crossPlatformApp')}
-                  </p>
-                </div>
-                <div className="flex space-x-2 mt-4">
-                  <Button size="sm" variant="outline" asChild className="border-green-400 text-black dark:text-green-200 hover:bg-green-400/10">
-                    <Link href="https://github.com/KimADR" target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-1" />
-                      {t('viewCode')}
-                    </Link>
-                  </Button>
+              <CardContent className="flex-grow">
+                <div className="flex flex-wrap gap-2">
+                  <Badge variant="secondary" className="bg-gradient-to-r from-green-500 to-teal-500 text-white shadow-neon text-xs">{t('SpringBoot')}</Badge>
+                  <Badge variant="secondary" className="bg-gradient-to-r from-green-500 to-teal-500 text-white shadow-neon text-xs">{t('Java')}</Badge>
                 </div>
               </CardContent>
+              <CardFooter className="flex justify-end items-center pt-4 mt-auto">
+                <Button size="sm" variant="outline" asChild className="border-green-400 text-black dark:text-green-200 hover:bg-green-400/10">
+                  <Link href="https://github.com/KimADR/" target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-4 h-4 mr-1" />
+                    {t('viewCode')}
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
           </div>
 
@@ -458,12 +427,12 @@ export default function Portfolio() {
       {/* Contact Section */}
       <section id="contact" className="py-12 sm:py-16 px-4 bg-gradient-to-br from-blue-950 via-black to-purple-950 relative overflow-hidden">
         <div className="pointer-events-none absolute inset-0 bg-grid-pattern opacity-10 z-0" />
-        <div className="container mx-auto max-w-4xl px-4 relative z-10">
+        <div className="container mx-auto max-w-6xl px-4 relative z-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white drop-shadow-neon">{t('getInTouch')}</h2>
 
           <div className="flex flex-col md:flex-row gap-8 md:gap-12">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl border-2 border-purple-500/40 shadow-neon-glass p-6 sm:p-8 flex flex-col justify-center md:w-1/2">
-              <p className="text-purple-300 mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl border-2 border-purple-500/40 shadow-neon-glass p-6 sm:p-8 flex flex-col justify-center items-center md:w-1/2">
+              <p className="text-purple-300 mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold text-center">
                 {t('letsConnect')}
               </p>
 
@@ -536,6 +505,14 @@ export default function Portfolio() {
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Github className="w-5 h-5" />
+              </Link>
+              <Link
+                href="https://www.linkedin.com/in/mael-andriamahatoky"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
               </Link>
               <Link
                 href="mailto:andriamahatoky.mael2020@gmail.com"
