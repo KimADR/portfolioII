@@ -158,11 +158,11 @@ export default function Portfolio() {
             {t('heroDescription')}
           </p>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
-            <Button asChild size="lg" className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:from-blue-600 hover:to-purple-600 text-sm sm:text-base">
+          <div className="hidden xs:flex flex-col xs:flex-row justify-center gap-3 sm:gap-4 px-4">
+            <Button asChild className="bg-gradient-to-r from-blue-500 to-purple-500 text-white shadow-lg hover:from-blue-600 hover:to-purple-600 text-sm sm:text-base">
               <Link href="#projects">{t('viewMyWork')}</Link>
             </Button>
-            <Button variant="outline" size="lg" asChild className="border-white text-black dark:text-white hover:bg-white/10 text-sm sm:text-base">
+            <Button variant="outline" asChild className="border-white text-black dark:text-white hover:bg-white/10 text-sm sm:text-base hidden xs:inline-flex">
               <Link href="https://github.com/KimADR" target="_blank" rel="noopener noreferrer">
                 <Github className="w-4 h-4 mr-2" />
                 GitHub Profile
@@ -461,8 +461,8 @@ export default function Portfolio() {
         <div className="container mx-auto max-w-4xl px-4 relative z-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12 text-white drop-shadow-neon">{t('getInTouch')}</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
-            <div className="bg-white/10 backdrop-blur-md rounded-xl border-2 border-purple-500/40 shadow-neon-glass p-6 sm:p-8 flex flex-col justify-center h-full">
+          <div className="flex flex-col md:flex-row gap-8 md:gap-12">
+            <div className="bg-white/10 backdrop-blur-md rounded-xl border-2 border-purple-500/40 shadow-neon-glass p-6 sm:p-8 flex flex-col justify-center md:w-1/2">
               <p className="text-purple-300 mb-6 sm:mb-8 text-xl sm:text-2xl md:text-3xl font-bold">
                 {t('letsConnect')}
               </p>
@@ -514,7 +514,7 @@ export default function Portfolio() {
               </div>
             </div>
 
-            <div className="flex items-center h-full">
+            <div className="md:w-1/2">
               <ContactForm />
             </div>
           </div>
